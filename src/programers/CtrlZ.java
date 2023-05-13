@@ -9,8 +9,6 @@ public class CtrlZ {
 
 		String[] arrStr = s.split(" ");
 		
-		System.out.println(arrStr.toString());
-		
 		for(int i=0; i<arrStr.length; i++) {			
 			if(arrStr[i].equals("Z")) {
 				answer -= Integer.parseInt(arrStr[i-1]);
