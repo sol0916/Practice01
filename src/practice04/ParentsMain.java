@@ -12,9 +12,9 @@ public class ParentsMain {
 		Parents p = new Parents(size);
 		Child c = new Child(size);
 		
-		p.sort();
-		c.sort();
-		
+		//p.sort();
+		//c.sort();
+		c.desc();
 
 	}
 

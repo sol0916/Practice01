@@ -20,30 +20,32 @@ public class Parents {
 
 		- 배열 크기의 범위 : int num = (int)(Math.random()*15) + 5;
 	 */
-		
+
 	int size;
-	
+
+	int[] arrInt;	
+	char[] arrChar;
+
 	//기본 생성자
 	Parents() {	
 	}
-	
+
 	//size값을 받는 생성자
 	Parents(int size) {
 		this.size = size;
+		arrInt = new int[size];
+		arrChar = new char[size];
 	}
 
 	//정렬 메서드
 	public void sort() {
-
 		asc();
 	}
 
+	
 	//오름차순 메서드
 	public void asc() {
 
-		int[] arrInt = new int[size];		
-		char[] arrChar = new char[size]; 
-		
 		for(int i=0; i<arrInt.length; i++) {
 			int number = (int)(Math.random()*100+1);
 			char alphabet = (char)((int)(Math.random()*26)+65);
@@ -52,9 +54,6 @@ public class Parents {
 			arrChar[i] = alphabet;
 		}
 		
-		Arrays.sort(arrInt);
-		Arrays.sort(arrChar);
-
 	}
 
 
