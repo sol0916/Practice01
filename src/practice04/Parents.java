@@ -39,24 +39,43 @@ public class Parents {
 
 	//정렬 메서드
 	public void sort() {
-		asc();
+		ascInt();
+		for(int i=0; i<size*4; i++) {
+			System.out.println("=");
+		}
+		ascChar();
 	}
 
-	
-	//오름차순 메서드
-	public void asc() {
 
+	
+	//Int오름차순 메서드
+	public void ascInt() {
+				
 		for(int i=0; i<arrInt.length; i++) {
 			int number = (int)(Math.random()*100+1);
-			char alphabet = (char)((int)(Math.random()*26)+65);
-
 			arrInt[i] = number;
+		}
+		
+		System.out.println(Arrays.toString(arrInt));
+		Arrays.sort(arrInt);
+		System.out.println("오름차순");
+		System.out.println(Arrays.toString(arrInt));				
+	}
+	
+	
+	//Char오름차순 메서드
+	public void ascChar() {
+		
+		for(int i=0; i<arrInt.length; i++) {
+			char alphabet = (char)((int)(Math.random()*26)+65);
 			arrChar[i] = alphabet;
 		}
 		
+		System.out.println(Arrays.toString(arrChar));
+		
+		Arrays.sort(arrChar);
+		System.out.println("오름차순");
+		System.out.println(Arrays.toString(arrChar));				
 	}
-
-
-
 
 }
