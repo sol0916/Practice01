@@ -38,8 +38,8 @@ public class BJ4796 {
 		//남은 일수는 사용기간보다 작아야 함
 		if(bDate<l) {
 			result = aDate+bDate;
-		} else { //여기 다시 봐야함
-			bDate = bDate - l;
+		} else { //남은 일수가 사용기간보다 크거나 같을 경우
+			bDate = l;
 			result = aDate+bDate;
 		}
 		

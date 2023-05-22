@@ -7,6 +7,8 @@ public class BJ11659 {
 	public static void main(String[] args) {
 		
 		
+		//못 풀었음
+		
 		Scanner scan = new Scanner(System.in);
 		
 		//배열 개수, 횟수 변수
