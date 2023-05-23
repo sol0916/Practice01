@@ -8,39 +8,42 @@ public class Pro120923 {
 
 		//연속된 수의 합 구하기
 
-		solution(3, 12);
-
-
+		int[] arr = solution(3, 12);
+		System.out.println(Arrays.toString(arr));
 
 	} //main
 
 	public static int[] solution(int num, int total) {
 		int[] answer = new int[num];
-		int[] pSum = new int[num+1];
-
-		//구간합 알고리즘
-		//pSum이 total과 같을 때 해당 숫자 이전부터 num까지 구하고 정렬 후 출력
-
-
+		int window = 0;
+		int index = 0;
+		
+		
 		while(true) {
-
-			for(int i=0; i<num; i++) {
-				pSum[i+1] += i;
-				
-				if(pSum[i] == total) {} break;
-				
-				
+			
+			//window에 값 넣어주기
+			for(int i=index; i<num+index; i++) {
+				window += i;
 			}
-
-
+			
+			if(window==total) break;
+			else if(window > total) { //window가 total보다 크다면 index 감소
+				window = 0;
+				index--;
+			} else { //window가 total보다 적다면 증가
+				window = 0;
+				index++;
+			}
+			
 		}
-
-
-
-
-		//return answer;
+		
+		//배열에 값 넣어주기
+		for(int i=0; i<num; i++) {
+			answer[i] = index++;
+		}
+		
+		return answer;
 	}
-
-
+	
 
 }
