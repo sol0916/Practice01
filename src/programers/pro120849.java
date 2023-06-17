@@ -18,8 +18,6 @@ public class pro120849 {
 		
 		System.out.println(str);
 		
-		
-
 	}
 
 }
