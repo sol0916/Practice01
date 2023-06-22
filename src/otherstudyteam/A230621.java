@@ -28,14 +28,20 @@ public class A230621 {
 		ArrayList<Integer> d = new ArrayList<>(); //차집합
 		ArrayList<Integer> u = new ArrayList<>(); //합집합
 		
+		//교집합
+		in.addAll(list1);
+		in.retainAll(list2);
+
+		//차집합
+		d.addAll(list1);
+		d.removeAll(list2);
+
+		//합집합
+		u.addAll(list1);
+		u.remove(in);
+		u.addAll(list2);
 		
-		
-		list1.retainAll(list2);
-		System.out.println(list1);
-		list1.removeAll(list2);
-		list1.addAll(list2);
-		
-		
+				
 		System.out.println("교집합="+in);
 		System.out.println("차집합="+d);
 		System.out.println("합집합="+u);

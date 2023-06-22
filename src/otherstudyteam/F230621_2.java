@@ -3,12 +3,12 @@ package otherstudyteam;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class F230621 {
-
+public class F230621_2 {
+	
 	public static void main(String[] args) {
-
-		//전체 단어에서 찾기
 		
+		//각 단어 길이마다 찾기
+
 		String[] words = { "better", "vest", "raspy", "tearful", "dream", "accept", "ignore", "elfin", "pat", "wail",
 				"itchy", "attract", "unpack", "assorted", "month", "cast", "beef", "arithmetic", "petite", "umbrella",
 				"kaput", "frightened", "frame", "abounding", "yak", "resonant", "trace", "simplistic", "three", "slip",
@@ -19,54 +19,62 @@ public class F230621 {
 				"gaudy", "wound", "knot", "park", "simple", "brush", "fail", "volatile", "jam", "chubby", "pour",
 				"load", "abortive", "increase", "knowledge", "meal", "cream", "stitch", "laugh", "treatment", "reach",
 				"approval", "war", "kindhearted", "comparison", "past", "standing", "crown", "society" };
-
-
+		
+		
 		Map<String, Integer> map = new HashMap<>();
 		int value = 0;
-
-		//전체 
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("단어의 길이 >");
+		int length = scan.nextInt();
+		
+		//각 길이에 맞는 값 찾기
 		for(int i=0; i<words.length; i++) {
-
-			if(words[i].length()>=5 && words[i].length()<=15) {
-
-				String[] arr = new String[words[i].length()];				
+			
+			if(words[i].length()==length) {
+				
+				String[] arr = new String[words[i].length()];
 				arr = words[i].split("");
-
+				
 				for(int j=0; j<arr.length; j++) {
+					
 					if(map.containsKey(arr[j])) {
-						map.put(arr[j], map.get(arr[j])+1); 
+						map.put(arr[j], map.get(arr[j])+1);
 					} else {
 						value = 0;
 						value++;
 						map.put(arr[j], value);
-					}		
-				}
-				
-				arr = null; 
-
+					}
+					
+				}					
+				arr = null;
 			}
-
-
+				
 		}
-
-
-		//최댓값 찾기
+		
+		
 		int max = 0;
-		String a = "";
+		String result = "";
+
 		Set<Entry<String, Integer>> entrySet = map.entrySet();
+		
+		//최댓값 찾기
 		for(Entry<String, Integer> entry : entrySet) {
+			
 			if(max<entry.getValue()) {
 				max = entry.getValue();
-				a = entry.getKey();
+				result = entry.getKey();
 			}
+			
 		}
-
+		
 		
 		System.out.println(map);
-		System.out.println("가장 많이 사용되는 단어: "+a);
-
-
-
+		System.out.println("가장 많이 사용되는 단어:"+result);
+		
+		
+		
+		
 	}
 
 }
