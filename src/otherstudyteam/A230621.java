@@ -38,7 +38,7 @@ public class A230621 {
 
 		//합집합
 		u.addAll(list1);
-		u.remove(in);
+		u.removeAll(in);
 		u.addAll(list2);
 		
 				
