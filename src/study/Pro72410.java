@@ -8,41 +8,35 @@ public class Pro72410 {
 		
 		//신규 아이디 추천 - 정규표현식
 		
-		String new_id = "...!@BaT#*..y.abcdefghijklm";
+//		String new_id = "...!@BaT#*..y.abcdefghijklm";
+		String new_id = "z-+.^.";
 		
-		String pattern1 = new_id.toLowerCase();
-		String pattern2 = new_id.replaceAll("[^a-z0-9-_.]", "");
-		String pattern3 = new_id.replaceAll("[..]+", ".");
-		String pattern4 = new_id.replaceAll("^[.]|[.]$", "");
 		
-		String pattern5 = "";
-		String[] arr = new_id.split("");
-		for(int i=0; i<arr.length; i++) {
-			if(arr[i]==null) {
-				arr[i] = "a";
-			}
-			pattern5 += arr[i];
+		String answer = new_id.toLowerCase();
+		answer = answer.replaceAll("[^a-z0-9-_.]", "");
+		answer = answer.replaceAll("[..]+", ".");
+		answer = answer.replaceAll("^[.]|[.]$", "");
+		
+		if(answer.isEmpty()) {
+			answer = "a";
 		}
 		
-		String pattern6 = "";
 		if(new_id.length()>=16) {
-			pattern6 = new_id.substring(0, 15);
+			answer = answer.substring(0, 15);
+			answer = answer.replaceAll("[.]$", "");
 		}
-	    pattern6 = new_id.replaceAll("[.]$", "");
 	    
-	    String pattern7 = "";
-	    if(new_id.length()<=2) {
-	    	String[] arr2 = new_id.split("");
-	    	for(int i=0; i<=new_id.length(); i++) {
-	    		pattern7 += arr2[i];
-	    		if(arr2[i]==arr2[arr2.length]) {
-	    			
-	    		}
-	    	}
-	    }
+		if (answer.length() <= 2) {
+		    while (answer.length() < 3) {
+		        if (answer.length() > 0) {
+		            answer += answer.charAt(answer.length() - 1);
+		        } else {
+		            answer += "a";
+		        }
+		    }
+		}
 		
-		System.out.println(pattern5);
-	
+	    System.out.println(answer);
 	
 		
 	}
