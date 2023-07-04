@@ -37,5 +37,6 @@ public class Pro42888 {
 		
 		System.out.println(Arrays.toString(answer));
 	}
+	
 
 }
